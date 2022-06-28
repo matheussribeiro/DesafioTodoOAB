@@ -1,0 +1,11 @@
+#listcard{
+  width: 300px;
+  height: 50%;
+  display: inline-block;
+  margin: 10px;
+}
+
+p {
+  max-width: 50ch;
+  word-wrap: break-word;
+}

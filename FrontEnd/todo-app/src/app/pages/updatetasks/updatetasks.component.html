@@ -1,0 +1,48 @@
+<h1>Atualizar Tarefa</h1>
+
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="name"
+      nzRequired
+    >
+      <span>Nome da Tarefa</span>
+    </nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Informe o nome da tarefa">
+      <input ngModel={{todo.name}} style="width:250px" nz-input id="name" formControlName="name" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label
+      [nzSm]="6"
+      [nzXs]="24"
+      nzFor="description"
+      nzRequired
+    >
+      <span>Descrição da tarefa</span>
+    </nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Informe a descrição da tarefa">
+      <textarea
+        ngModel={{todo.description}}
+        nz-input
+        placeholder="Descrição"
+        [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+        id="description"
+        formControlName="description"
+      ></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button style="margin-right:10px ;" nz-button nzType="primary">Alterar</button>
+      <a nz-button (click)="cancel()">Voltar</a>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+
+
+

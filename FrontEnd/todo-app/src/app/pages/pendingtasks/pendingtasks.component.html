@@ -1,0 +1,17 @@
+<h1>Tarefas Pendentes</h1>
+
+<div id="listcard" *ngFor="let item of TodoList">
+    <nz-card [nzHoverable]="true" nzTitle={{item.name}} title={{item.name}} style="width: 300px;margin-top: 16px" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+      <p>{{item.description}}</p>
+      <p>Data de Criação :{{item.dtCreated | date:'dd/MM/yyyy'}}</p>
+    </nz-card>
+    <ng-template #actionSetting>
+      <i (click)="updateStatus(item.id)" style="color:green;" title="Concluir Tarefa" nz-icon nzType="check"></i>
+    </ng-template>
+    <ng-template #actionEdit>
+      <i routerLink="/updatetasks/{{item.id}}" style="color:blue ;" title="Editar Tarefa" nz-icon nzType="edit"></i>
+    </ng-template>
+    <ng-template #actionEllipsis>
+      <i title="Excluir Tarefa" style="color:red; " (click)="showDeleteConfirm(item.id)" nz-icon nzType="delete"></i>
+    </ng-template>
+</div>
